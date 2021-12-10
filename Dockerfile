@@ -6,10 +6,8 @@
 ARG BASE_CONTAINER=continuumio/miniconda3
 FROM $BASE_CONTAINER
 
-RUN apt-get update -y
-
-#install dev tools
-RUN apt-get install gcc python3-dev chromium-driver -y
+RUN apt-get update -y \
+    apt-get install gcc python3-dev chromium-driver -y
 
 #install gnu make
 RUN apt-get install make -y
